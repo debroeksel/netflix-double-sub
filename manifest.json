@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Netflix - Double Subtitles",
+    "version": "1.0",
+    "description": "Add 2 subtitles to Netflix and translate one into your desired language with built in chrome translator.",
+    "permissions": [
+        "contextMenus",
+        "scripting",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "https://www.netflix.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.netflix.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
